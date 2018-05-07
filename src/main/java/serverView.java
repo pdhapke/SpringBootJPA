@@ -16,5 +16,9 @@ public class serverView {
         model.addAttribute("name", name);
         return "greeting";
     }
-
+    @GetMapping("/")
+    public String main(@RequestParam(name="name", required=false, defaultValue="Peter") String name, Model model) {
+        model.addAttribute("name", name);
+        return "main";
+    }
 }

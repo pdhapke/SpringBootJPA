@@ -15,6 +15,60 @@ public class Person {
 
     private String lname;
     private String fname;
+    private String address;
+    private String city;
+    private String state;
+    private String zip;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        if(address.equals("")){
+            this.address = "Not Yet Set";
+        }
+
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        if(city.equals("")){
+            this.city = "Unknown";
+        }
+
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        if(state.equals("") || state == null){
+            this.state = "XX";
+        }
+
+        this.state = state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        if(zip.equals("")){
+            this.zip = "00000";
+        }
+
+        this.zip = zip;
+    }
+
+
 
     public String getLname() {
         return lname;

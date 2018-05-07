@@ -1,0 +1,43 @@
+
+<h2 > The current contents of the database</h2>
+<h7> Mouseover to inspect or Double click to edit/delete an entry </h7>
+<div ng-controller="databaseController" dburl="/people">
+
+    <div style="border: 1px solid" ng-repeat="person in hateoasJSON._embedded.people">
+
+         <div ng-mouseover="show = true" ng-mouseleave="show = false" ng-init="edit = false" ng-dblclick = "edit = !edit">
+             <div ng-if ="!edit">
+                <h3> Entry # {{$index + 1}} </h3>
+                    <p>
+                        First Name: {{person.fname}} <br>
+                        Last Name: {{person.lname}} <br>
+                    </p>
+                    <!-- mouseover info -->
+                    <div ng-if="show" >
+                        {{person.address}} <br>
+                        {{person.city}}, {{person.state}} {{person.zip}}
+
+                    </div>
+            </div>
+
+            <div ng-if ="edit">
+                <h3> Entry # {{$index + 1}} </h3>
+                First Name: <input type="text" ng-model="person.fname"><br>
+                Last Name: <input type="text" ng-model="person.lname"><br>
+                Address: <input type="text" ng-model="person.address"><br>
+                City: <input type="text" ng-model="person.city"><br>
+                State: <input type="text" ng-model="person.state"><br>
+                Zip: <input type="text" ng-model="person.zip"><br>
+                <br>
+                {{person.fname}} {{person.lname}}  <br>
+                {{person.address}} <br>
+                {{person.city}}, {{person.state}} {{person.zip}}
+                <br>
+                <button ng-click="updateDataBase(person)">Press to confirm edits</button>
+                <button ng-click="deleteFromDataBase(person)">Press to delete</button>
+
+            </div>
+
+         </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+</script>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Some angular practice</title>
+</head>
+
+
+<body>
+
+
+<div ng-app="mainApp" ng-controller="mainCtrl" ng-init="greeting='Add a person below then submit to add to the database'">
+    <h3>{{greeting}}</h3>
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+    Address: <input type="text" ng-model="personAddress"><br>
+    City: <input type="text" ng-model="personCity"><br>
+    State: <input type="text" ng-model="personState"><br>
+    Zip: <input type="text" ng-model="personZip"><br>
+
+
+
+    <br>
+    Preview: <button ng-click="addToDataBase()">Press to add the new entry</button> <br>
+    <p>
+        {{name()}}<br>
+        {{personAddress}} <br>
+        {{personCity}}, {{personState}} {{personZip}} <br>
+    </p>
+
+
+    <get-database></get-database>
+
+
+
+</div>
+
+
+</body>
+
+<footer>
+    <!-- Modules -->
+    <script src="mainApp_modules.js"> </script>
+    <!-- SAervices -->
+    <script src="mainApp_services.js"> </script>
+    <!-- Controllers -->
+    <script src='mainApp_controllers.js'> </script>
+    <!-- Directives -->
+    <script src='mainApp_directives.js'> </script>
+</footer>
+
+</html>
